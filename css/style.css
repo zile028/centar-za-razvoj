@@ -17,4 +17,339 @@ body {
   color: #0b223d;
   line-height: 1.5;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+h2:after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  height: 15px;
+  width: 200px;
+  background: -webkit-gradient(linear, left top, right top, from(#00aeef), to(rgba(0, 174, 239, 0.1)));
+  background: linear-gradient(to right, #00aeef, rgba(0, 174, 239, 0.1));
+}
+
+.myBtn {
+  padding: 15px 30px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#00aeef), to(#0b223d));
+  background-image: linear-gradient(to right, #00aeef, #0b223d);
+  color: #fff;
+  z-index: 100;
+  text-transform: uppercase;
+  border-radius: 20px 0 20px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin: 20px auto 0;
+  display: block;
+}
+
+.myBtn:before {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: red;
+  border-radius: 20px 0 20px 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0b223d), to(#00aeef));
+  background-image: linear-gradient(to right, #0b223d, #00aeef);
+  opacity: 0;
+  z-index: -100;
+}
+
+.myBtn:hover:before {
+  opacity: 1;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+header {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.99)), to(rgba(255, 255, 255, 0.4))), url(../img/header.jpg);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0.4)), url(../img/header.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 85vh;
+  padding-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100px;
+}
+
+header nav .logo img {
+  height: 100px;
+  width: 100%;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header nav ul li {
+  margin-left: 40px;
+}
+
+header nav ul a {
+  color: #0b223d;
+  text-transform: uppercase;
+  font-size: 1rem;
+  position: relative;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+header nav ul a:hover {
+  border-bottom: 2px solid #0b223d;
+}
+
+header hgroup {
+  background: rgba(0, 174, 239, 0.5);
+  padding: 30px 30px 30px 60px;
+  text-align: right;
+  border-radius: 200px 0 0 0;
+}
+
+header hgroup h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 5px #0b223d;
+}
+
+.onama, .mentorstvo {
+  padding: 50px 0;
+}
+
+.onama h5, .mentorstvo h5 {
+  text-align: justify;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.onama p, .mentorstvo p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.onama h3, .mentorstvo h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.onama ul, .mentorstvo ul {
+  padding-left: 20px;
+}
+
+.onama ul li, .mentorstvo ul li {
+  text-indent: -20px;
+}
+
+.onama ul li::before, .mentorstvo ul li::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f058";
+  margin-right: 5px;
+  color: #00aeef;
+}
+
+.usluge {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00aeef), to(rgba(0, 174, 239, 0.5))), url(../img/bg.jpg);
+  background-image: linear-gradient(#00aeef, rgba(0, 174, 239, 0.5)), url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 400px 0 0 0;
+}
+
+.usluge .container {
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.usluge .container h2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.usluge .container h2:after {
+  content: none;
+}
+
+.usluge .container div {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  text-align: center;
+}
+
+.usluge .container div i {
+  font-size: 2rem;
+}
+
+.usluge .container div p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+.preporuke {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00aeef), to(rgba(0, 174, 239, 0.5))), url(../img/bg.jpg);
+  background-image: linear-gradient(#00aeef, rgba(0, 174, 239, 0.5)), url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 400px 0 0;
+}
+
+.preporuke .container:first-child {
+  padding-top: 50px;
+}
+
+.preporuke .container:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 50px;
+}
+
+.preporuke .container:last-child .item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 32%;
+          flex: 0 0 32%;
+  text-align: center;
+}
+
+.preporuke .container:last-child h4 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.preporuke .container:last-child h6 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.preporuke .container:last-child img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.preporuke .container h2:after {
+  width: 400px;
+  background: -webkit-gradient(linear, left top, right top, from(#00aeef), to(white));
+  background: linear-gradient(to right, #00aeef, white);
+}
+
+footer {
+  padding: 30px 0;
+  background-color: #0b223d;
+  text-align: center;
+  color: #fff;
+}
+
+footer a {
+  color: #00aeef;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

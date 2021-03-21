@@ -1,11 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap');
-$primaryColor: #0b223d;  /* rgb(11, 34, 61) */
-$secondaryColor: #00aeef;  /* rgb(0, 174, 239) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap");
+$primaryColor: #0b223d; /* rgb(11, 34, 61) */
+$secondaryColor: #00aeef; /* rgb(0, 174, 239) */
 $white: #fff;
 $font: 16px;
-$fontFamily: 'Montserrat', sans-serif;
-$transition: .3s ease;
+$fontFamily: "Montserrat", sans-serif;
+$transition: 0.3s ease;
 $padding: 50px 0;
+
+// MIXIN
+@mixin flex($justify, $align, $direction: row) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
 
 /*****************
 basic styles
@@ -20,4 +29,233 @@ body {
     font-family: $fontFamily;
     color: $primaryColor;
     line-height: 1.5;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    &:after {
+        content: "";
+        display: block;
+        margin: 10px auto 0;
+        height: 15px;
+        width: 200px;
+        background: linear-gradient(to right, rgba($secondaryColor, 1), rgba($secondaryColor, 0.1));
+    }
+}
+.myBtn {
+    padding: 15px 30px;
+    background-image: linear-gradient(to right, rgba($secondaryColor, 1), rgba($primaryColor, 1));
+    color: $white;
+    z-index: 100;
+    text-transform: uppercase;
+    border-radius: 20px 0 20px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin: 20px auto 0;
+    display: block;
+    &:before {
+        transition: opacity $transition;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: red;
+        border-radius: 20px 0 20px 0;
+        background-image: linear-gradient(to right, rgba($primaryColor, 1), rgba($secondaryColor, 1));
+        opacity: 0;
+        z-index: -100;
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+    }
+}
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+// HEADER
+header {
+    background: linear-gradient(to bottom, rgba($white, 0.99), rgba($white, 0.4)), url(../img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+    padding-top: 5px;
+    @include flex(space-between, flex-end, column);
+    nav {
+        @include flex(space-between, center);
+        height: 100px;
+        .logo {
+            img {
+                height: 100px;
+                width: 100%;
+            }
+        }
+        ul {
+            @include flex(flex-end, center);
+            li {
+                margin-left: 40px;
+            }
+            a {
+                color: $primaryColor;
+                text-transform: uppercase;
+                font-size: 1rem;
+                position: relative;
+                transition: $transition;
+                border-bottom: 2px solid transparent;
+                &:hover {
+                    border-bottom: 2px solid $primaryColor;
+                }
+            }
+        }
+    }
+    hgroup {
+        background: rgba($secondaryColor, 0.5);
+        padding: 30px 30px 30px 60px;
+        text-align: right;
+        border-radius: 200px 0 0 0;
+        h1 {
+            font-size: 3rem;
+            color: $white;
+            text-shadow: 0 0 5px $primaryColor;
+        }
+    }
+}
+
+// onama
+.onama {
+    padding: $padding;
+
+    h5 {
+        text-align: justify;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    p {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    ul {
+        padding-left: 20px;
+        li {
+            text-indent: -20px;
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f058";
+                margin-right: 5px;
+                color: $secondaryColor;
+            }
+        }
+    }
+}
+
+// USLUGE
+.usluge {
+    background-image: linear-gradient(rgba($secondaryColor, 1), rgba($secondaryColor, 0.5)), url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 400px 0 0 0;
+    .container {
+        padding: $padding;
+        @include flex(space-between, flex-start);
+        h2 {
+            flex: 0 0 100%;
+
+            &:after {
+                content: none;
+            }
+        }
+        div {
+            flex: 0 0 48%;
+            text-align: center;
+            i {
+                font-size: 2rem;
+            }
+            p {
+                color: $white;
+                font-size: 1.2rem;
+                font-weight: 400;
+                margin: 20px 0;
+            }
+        }
+    }
+}
+// MENTORSTVO
+.mentorstvo {
+    @extend .onama;
+}
+// PREPORUKE
+.preporuke {
+    background-image: linear-gradient(rgba($secondaryColor, 1), rgba($secondaryColor, 0.5)), url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 400px 0 0;
+    .container {
+        &:first-child {
+            padding-top: 50px;
+        }
+        &:last-child {
+            @include flex(center, flex-start);
+            .item {
+                flex: 0 0 32%;
+                text-align: center;
+            }
+            h4 {
+                font-size: 1.5rem;
+                color: $white;
+                margin: 20px 0;
+            }
+            h6 {
+                font-size: 0.9rem;
+                font-weight: 700;
+                margin: 0 0 20px 0;
+            }
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
+            padding-bottom: 50px;
+        }
+        h2 {
+            &:after {
+                width: 400px;
+                background: linear-gradient(to right, rgba($secondaryColor, 1), rgba($white, 1));
+            }
+        }
+    }
+}
+footer {
+    padding: 30px 0;
+    background-color: $primaryColor;
+    text-align: center;
+    color: $white;
+    a {
+        color: $secondaryColor;
+        transition: $transition;
+        &:hover {
+            color: $white;
+        }
+    }
 }
