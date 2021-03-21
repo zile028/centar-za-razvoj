@@ -87,6 +87,12 @@ h2:after {
   margin: 0 auto;
 }
 
+@media (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+}
+
 header {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.99)), to(rgba(255, 255, 255, 0.4))), url(../img/header.jpg);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0.4)), url(../img/header.jpg);
@@ -173,9 +179,16 @@ header nav ul a:hover {
 
 header hgroup {
   background: rgba(0, 174, 239, 0.5);
-  padding: 30px 30px 30px 60px;
   text-align: right;
   border-radius: 200px 0 0 0;
+}
+
+@media (max-width: 767px) {
+  header hgroup {
+    border-radius: 0px 0 0 0;
+    padding: 20px;
+    width: 100%;
+  }
 }
 
 header hgroup h1 {
@@ -186,6 +199,12 @@ header hgroup h1 {
 
 .onama, .mentorstvo {
   padding: 50px 0;
+}
+
+@media (max-width: 767px) {
+  .onama, .mentorstvo {
+    padding: 20px 0;
+  }
 }
 
 .onama h5, .mentorstvo h5 {
@@ -228,6 +247,12 @@ header hgroup h1 {
   border-radius: 400px 0 0 0;
 }
 
+@media (max-width: 767px) {
+  .usluge {
+    border-radius: 0 0 0 0;
+  }
+}
+
 .usluge .container {
   padding: 50px 0;
   display: -webkit-box;
@@ -245,6 +270,12 @@ header hgroup h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .usluge .container {
+    padding: 20px 0;
+  }
 }
 
 .usluge .container h2 {
@@ -283,8 +314,20 @@ header hgroup h1 {
   border-radius: 0 400px 0 0;
 }
 
+@media (max-width: 767px) {
+  .preporuke {
+    border-radius: 0 0 0 0;
+  }
+}
+
 .preporuke .container:first-child {
   padding-top: 50px;
+}
+
+@media (max-width: 767px) {
+  .preporuke .container:first-child {
+    padding-top: 20px;
+  }
 }
 
 .preporuke .container:last-child {
@@ -304,6 +347,12 @@ header hgroup h1 {
       -ms-flex-direction: row;
           flex-direction: row;
   padding-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  .preporuke .container:last-child {
+    padding-bottom: 20px;
+  }
 }
 
 .preporuke .container:last-child .item {
@@ -334,6 +383,41 @@ header hgroup h1 {
   width: 400px;
   background: -webkit-gradient(linear, left top, right top, from(#00aeef), to(white));
   background: linear-gradient(to right, #00aeef, white);
+}
+
+.preporuke .owl {
+  position: relative;
+}
+
+.preporuke .owl-dots {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.preporuke .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 110%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.preporuke .owl-nav i {
+  font-size: 2rem;
 }
 
 footer {

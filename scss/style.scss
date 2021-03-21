@@ -89,6 +89,9 @@ h2 {
 .container {
     width: 60%;
     margin: 0 auto;
+    @media (max-width: 767px) {
+        width: 90%;
+    }
 }
 
 // HEADER
@@ -128,9 +131,13 @@ header {
     }
     hgroup {
         background: rgba($secondaryColor, 0.5);
-        padding: 30px 30px 30px 60px;
         text-align: right;
         border-radius: 200px 0 0 0;
+        @media (max-width: 767px) {
+            border-radius: 0px 0 0 0;
+            padding: 20px;
+            width: 100%;
+        }
         h1 {
             font-size: 3rem;
             color: $white;
@@ -142,7 +149,9 @@ header {
 // onama
 .onama {
     padding: $padding;
-
+    @media (max-width: 767px) {
+        padding: 20px 0;
+    }
     h5 {
         text-align: justify;
         font-size: 1rem;
@@ -177,8 +186,14 @@ header {
     background-size: cover;
     background-position: center;
     border-radius: 400px 0 0 0;
+    @media (max-width: 767px) {
+        border-radius: 0 0 0 0;
+    }
     .container {
         padding: $padding;
+        @media (max-width: 767px) {
+            padding: 20px 0;
+        }
         @include flex(space-between, flex-start);
         h2 {
             flex: 0 0 100%;
@@ -212,12 +227,22 @@ header {
     background-size: cover;
     background-position: center;
     border-radius: 0 400px 0 0;
+    @media (max-width: 767px) {
+        border-radius: 0 0 0 0;
+    }
     .container {
         &:first-child {
             padding-top: 50px;
+            @media (max-width: 767px) {
+                padding-top: 20px;
+            }
         }
         &:last-child {
             @include flex(center, flex-start);
+            padding-bottom: 50px;
+            @media (max-width: 767px) {
+                padding-bottom: 20px;
+            }
             .item {
                 flex: 0 0 32%;
                 text-align: center;
@@ -236,13 +261,30 @@ header {
                 width: 100%;
                 border-radius: 50%;
             }
-            padding-bottom: 50px;
         }
         h2 {
             &:after {
                 width: 400px;
                 background: linear-gradient(to right, rgba($secondaryColor, 1), rgba($white, 1));
             }
+        }
+    }
+    .owl {
+        position: relative;
+        .item {
+        }
+        &-dots {
+            flex: 0 0 100%;
+        }
+        &-nav {
+            position: absolute;
+            top: 50%;
+            width: 110%;
+            i {
+                font-size: 2rem;
+            }
+
+            @include flex(space-between, center);
         }
     }
 }

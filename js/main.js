@@ -1,12 +1,14 @@
 $(".owl-carousel").owlCarousel({
+  navText: [
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
+  ],
   loop: true,
   margin: 50,
   nav: true,
   dots: true,
   dotsEach: 3,
-  autoplay: true,
-  autoplayTimeout: 1500,
-  autoplayHoverPause: true,
+  center: true,
   responsive: {
     0: {
       items: 1,
